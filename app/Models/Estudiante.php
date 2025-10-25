@@ -2,18 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Estudiante extends Model
 {
-    use HasFactory;
+    use SoftDeletes;
+    
+    protected $guarded = [];
 
-    protected $fillable = [
-        'codigo',
-        'nombres',
-        'pri_ape',
-        'seg_ape',
-        'dni',
-    ];
+    public function comentarios() {
+
+        return $this->hasMany(Comentario::class);
+    }
 }
