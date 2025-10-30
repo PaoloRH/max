@@ -95,41 +95,6 @@
       © {{ date('Y') }} Gestor de Notas — Registro Académico
     </p>
   </div>
-//gestos de notas 
-<div class="mt-8 bg-white/10 p-6 rounded-2xl border border-white/20">
-  <h2 class="text-2xl font-bold mb-4 text-violet-300">Simulador de Promedio</h2>
-  <form action="{{ route('notas.simular') }}" method="POST" class="space-y-4">
-    @csrf
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <input type="number" step="0.1" min="0" max="20" name="participacion" placeholder="Participación (10%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="habilidades" placeholder="Habilidades (10%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="asistencia" placeholder="Asistencia (10%)" class="p-2 rounded-lg w-full text-black">
-
-      <input type="number" step="0.1" min="0" max="20" name="video_test_1" placeholder="Video Test 1 (5%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="video_test_2" placeholder="Video Test 2 (5%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="video_test_3" placeholder="Video Test 3 (5%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="video_test_4" placeholder="Video Test 4 (5%)" class="p-2 rounded-lg w-full text-black">
-
-      <input type="number" step="0.1" min="0" max="20" name="parcial_1" placeholder="Parcial 1 (5%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="parcial_2" placeholder="Parcial 2 (5%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="parcial_3" placeholder="Parcial 3 (5%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="parcial_4" placeholder="Parcial 4 (5%)" class="p-2 rounded-lg w-full text-black">
-
-      <input type="number" step="0.1" min="0" max="20" name="entregable" placeholder="Entregable (30%)" class="p-2 rounded-lg w-full text-black">
-      <input type="number" step="0.1" min="0" max="20" name="examen_final" placeholder="Examen Final (30%)" class="p-2 rounded-lg w-full text-black">
-    </div>
-
-    <button type="submit" class="mt-4 bg-violet-600 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded-lg w-full transition hover-glow">
-      Calcular Promedio
-    </button>
-  </form>
-
-  @isset($promedio)
-    <p class="mt-4 text-xl font-semibold text-cyan-300">Promedio Simulado: {{ $promedio }}</p>
-    <p class="text-sm text-white/70">{{ $promedio >= 10.5 ? '¡Aprobado!' : 'No aprobado' }}</p>
-  @endisset
-</div>
 
 </body>
 </html>
